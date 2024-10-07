@@ -1,0 +1,36 @@
+function setup() {
+  createCanvas(400, 400);
+  background("#8BC34A");
+  beginShape();
+  vertex(300, 100);
+  vertex(350, 150);
+  vertex(300, 200);
+  vertex(250, 150);
+  endShape(CLOSE);
+}
+
+function diamond(x, y, w, h) {
+  
+  triangle(x,y,x+w,y,x,y+h); 
+  triangle(x+w,y, x, y + h, x + w, y + h); 
+  triangle(x, y, x + w / 2, y - w / 2, x + w, y);
+  triangle(x, y + h, x + w / 2, y + h + w / 2, x + w, y + h); 
+}
+
+function draw() {
+  background("#8BC34A");
+  fill("#44C3D")
+  noStroke()
+  
+  rect(mouseX,mouseY,50, 50)
+  beginShape()
+  vertex(10,10)
+  vertex(380,40)
+  vertex(mouseX,mouseY)
+  endShape()
+  
+  diamond(mouseX,mouseY,50,50)
+  fill("#8A916A")
+  diamond(200,200,25,25)
+  
+}
